@@ -46,11 +46,19 @@ if choice == 1:
       accounts.append(name)
       print(accounts)
    else:
-         print('Invalid option')       
-                
-elif choice == 2:              
-   print('Account has been frozen')
-
+         print('Invalid option')        
+elif choice == 2:
+   account_status = input('What is your account status : ')
+   if account_status.upper() == 'FROZEN' :
+      print('Your account is frozen already')
+      
+   elif account_status.upper() == 'UNFROZEN' :
+         print('Your account has been frozen succesfully')
+      
+   else:
+      print('Your input is invalid')
+      
+   
 elif choice == 3:
    print('Account has been unfrozen')
 
