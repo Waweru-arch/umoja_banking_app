@@ -60,7 +60,16 @@ elif choice == 2:
       
    
 elif choice == 3:
-   print('Account has been unfrozen')
+   account_status = input('Enter account status (Frozen/Unfrozen) : ')
+   if account_status.upper() == 'UNFROZEN' :
+      print('Your account is not frozen')
+      
+   elif account_status.upper() == 'FROZEN' :
+      print('Account unfrozen successfully. Welcome back')
+      
+   else:
+      print(f"You entered the wrong account status '{account_status}' ")
+   
 
 elif choice == 4:
    print('Account has been closed')
