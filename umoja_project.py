@@ -72,7 +72,16 @@ elif choice == 3:
    
 
 elif choice == 4:
-   print('Account has been closed')
+   is_closed = False
+   if is_closed:
+      print('Account is allready closed')
+   else:
+      confirm = input("Enter ('Yes') to confirm : ")
+      if confirm.lower() == ('Yes') or confirm.lower().startswith('y') :
+         print('Account closed successfully')
+      else:
+         print('Account closure cancelled')
+      
 
 elif choice == 5:
    print('Withdrawal successful')
