@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = input("Paste your API key : " )
+API_KEY = input("Paste your OpenRouter key : " )
 
 def ask_ai(question):
     response = requests.post(
@@ -8,10 +8,23 @@ def ask_ai(question):
         headers={"Authorization": f"Bearer {API_KEY}"},
         json={
             "model": "openai/gpt-4o",
-            "messages": [{"role": "user", "content": question}]
+            "messages": [
+                {"role": "system", "content": " You are a helpful assistant for Umoja Bank. " } , {"role" : "user" , "content" : question}
+            ]
         }
     )
     result = response.json()
     return result["choices"][0]["message"]["content"]
 
-print(ask_ai("Hello! I am an Umoja bank customer. Can you help me?"))
+
+print("Umoja Bank AI Assistant")
+print("Type 'quit' to exit\n")
+
+while True :
+    question = input("You: ")
+    if question == "quit" :
+        print("Goodbye!")
+        break
+    
+    answer = ask_ai(question)
+    print("Umoja AI: " + answer + "\n")
