@@ -14,6 +14,7 @@ def ask_ai(question):
         }
     )
     result = response.json()
+    print(result)
     return result["choices"][0]["message"]["content"]
 
 
