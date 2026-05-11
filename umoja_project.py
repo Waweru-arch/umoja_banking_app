@@ -84,8 +84,13 @@ elif choice == 4:
       
 
 elif choice == 5:
-   print('Withdrawal successful')
-
+   account_balance = int(input('Enter account balance : ' ))
+   amount_to_withdraw = int(input('Enter amount to withdraw : ' ))
+   if amount_to_withdraw > account_balance :
+      print( 'Insufficient funds' )
+   else :
+      print ( 'Withdrawal successful' )
+      
 elif choice == 6:
    print('Withdrawal cancelled')
 
