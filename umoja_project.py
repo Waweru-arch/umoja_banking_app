@@ -32,21 +32,24 @@ accounts = []
 
 if choice == 1:
    print('Open an account')
+   number_of_clients = int(input('How many clients do you want to add? '))   
    
-   account_type = input('What is your account type ? (current/saving) ')
-   account_type = account_type.lower()
+   for i in range(number_of_clients):   
+      account_type = input('What is your account type ? (current/saving) ')
+      account_type = account_type.lower()
    
-   if account_type == 'current' or account_type == 'saving' :
-      name = input('What is your full names ? ' )
-      id_number = int(input('What is your identificstion number ? ' ))
+      if account_type == 'current' or account_type == 'saving' :
+         name = input('What is your full names ? ' )
+         id_number = int(input('What is your identificstion number ? ' ))
    
-      print(f'Account type : {account_type}')
-      print(f'Name : {name}')
-      print(f'Id number : {id_number}')
-      accounts.append(name)
-      print(accounts)
-   else:
-         print('Invalid option')        
+         print(f'Account type : {account_type}')
+         print(f'Name : {name}')
+         print(f'Id number : {id_number}')
+         accounts.append(name)
+         print(accounts)
+      else:
+         print('Invalid option')      
+         
 elif choice == 2:
    account_status = input('What is your account status : ')
    if account_status.upper() == 'FROZEN' :
