@@ -34,7 +34,7 @@ if choice == 1:
    print('Open an account')
    number_of_clients = int(input('How many clients do you want to add? '))   
    
-   for i in range(number_of_clients):   
+   for i in range(number_of_clients):                                    
       account_type = input('What is your account type ? (current/saving) ')
       account_type = account_type.lower()
    
@@ -95,8 +95,19 @@ elif choice == 5:
       print ( 'Withdrawal successful' )
       
 elif choice == 6:
-   print('Withdrawal cancelled')
-
+   account_balance = int(input('Enter account balance : '))   
+   amount_to_withdraw = int(input('Enter amount to withdraw : '))
+   if amount_to_withdraw > account_balance :
+      print('Insufficent funds')
+   else:
+      confirm = input('Enter "cancel" to cancel or "Accept" to accept : ' )
+      if confirm.lower() == 'cancel' or confirm.lower().startswith('c'):
+         print(f'Withdrawal cancelled. Current balance is {account_balance}')
+      else:
+         account_balance -= amount_to_withdraw
+         print('Withdrawal successful')
+         print(f'Current balance : Ksh. {account_balance}')
+      
 elif choice == 7:
    print('Deposit successful')
 
